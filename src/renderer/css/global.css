@@ -1,12 +1,19 @@
+@font-face {
+  font-family: Roboto;
+  src: url(../fonts/Roboto-Regular.ttf);
+}
+
 * {
   box-sizing: border-box;
 }
 
 :root {
-  --text-color: #FFF;
+  --ui-text-color: #FFF;
+  --ui-text-font: Roboto;
 }
 
 html {
-  color: var(--text-color);
+  color: var(--ui-text-color);
+  font-family: var(--ui-text-font);
   cursor: default;
 }
