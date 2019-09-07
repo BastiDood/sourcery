@@ -56,6 +56,8 @@ class Main {
         preload: this._PRELOAD_SCRIPT_PATH
       }
     }).once('closed', () => this._window = null);
+    win.webContents.session
+      .setPermissionRequestHandler((webContents, permission, callback) => callback(false));
     win.loadFile(this._homepage);
     return win;
   }
