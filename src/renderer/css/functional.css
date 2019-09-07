@@ -1,0 +1,12 @@
+.flex {
+  display: flex;
+}
+.center-both {
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  height: 100%;
+}
+.title {
+  font-size: var(--ui-title-font-size);
+}

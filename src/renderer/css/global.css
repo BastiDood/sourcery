@@ -10,10 +10,16 @@
 :root {
   --ui-text-color: #FFF;
   --ui-text-font: Roboto;
+  --ui-title-font-size: 4rem;
 }
 
 html {
   color: var(--ui-text-color);
   font-family: var(--ui-text-font);
   cursor: default;
+}
+
+html, body {
+  margin: 0;
+  height: 100%;
 }
