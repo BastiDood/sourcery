@@ -1,5 +1,8 @@
 'use strict';
 
+// NATIVE IMPORTS
+const path = require('path');
+
 // DEPENDENCIES
 const Electron = require('electron');
 
@@ -19,6 +22,15 @@ class Main {
      * @private
      */
     this._app = Electron.app;
+    /**
+     * Absolute path to the preload script.
+     * @private
+     * @readonly
+     */
+    this._PRELOAD_SCRIPT_PATH = path.resolve(this._app.getAppPath(), 'src/electron/preload.js');
+    console.log(this._PRELOAD_SCRIPT_PATH);
+
+    // Initialize main process
     this._initApp();
     this._initMenu();
   }
@@ -34,7 +46,14 @@ class Main {
   _createWindow() {
     const { BrowserWindow } = Electron;
     const win = new BrowserWindow({
-      backgroundColor: '#000000'
+      backgroundColor: '#000000',
+      darkTheme: true,
+      webPreferences: {
+        nodeIntegration: false,
+        nodeIntegrationInSubFrames: false,
+        nodeIntegrationInWorker: false,
+        preload: this._PRELOAD_SCRIPT_PATH
+      }
     }).once('closed', () => this._window = null);
     win.loadFile(this._homepage);
     return win;
