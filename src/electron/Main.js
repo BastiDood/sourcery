@@ -49,6 +49,7 @@ class Main {
       backgroundColor: '#000000',
       darkTheme: true,
       webPreferences: {
+        contextIsolation: true,
         nodeIntegration: false,
         nodeIntegrationInSubFrames: false,
         nodeIntegrationInWorker: false,
