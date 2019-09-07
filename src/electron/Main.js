@@ -50,6 +50,7 @@ class Main {
       darkTheme: true,
       webPreferences: {
         contextIsolation: true,
+        enableRemoteModule: false,
         nodeIntegration: false,
         nodeIntegrationInSubFrames: false,
         nodeIntegrationInWorker: false,
