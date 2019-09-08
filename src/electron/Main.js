@@ -16,7 +16,7 @@ class Main {
      * Absolute path to the index page.
      * @private
      */
-    this._homepage = homepage;
+    this._HOMEPAGE_PATH = homepage;
     /**
      * Electron app instance.
      * @private
@@ -59,7 +59,7 @@ class Main {
     }).once('closed', () => this._window = null);
     win.webContents.session
       .setPermissionRequestHandler((webContents, permission, callback) => callback(false));
-    win.loadFile(this._homepage);
+    win.loadFile(this._HOMEPAGE_PATH);
     return win;
   }
 
