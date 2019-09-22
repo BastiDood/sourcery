@@ -9,7 +9,7 @@
   "author": "Basti Ortiz <ortizbasti16@gmail.com>",
   "license": "GPL-3.0-or-later",
   "devDependencies": {
-    "electron": "^6.0.9",
+    "electron": "^6.0.10",
     "electron-builder": "^21.2.0"
   }
 }

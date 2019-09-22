@@ -8,7 +8,6 @@ const Electron = require('electron');
 
 class Main {
   /**
-   * 
    * @param {string} homepage - Absolute path to the index page
    */
   constructor(homepage) {
