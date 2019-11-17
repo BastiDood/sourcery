@@ -27,7 +27,6 @@ class Main {
      * @readonly
      */
     this._PRELOAD_SCRIPT_PATH = path.resolve(this._app.getAppPath(), 'src/electron/preload.js');
-    console.log(this._PRELOAD_SCRIPT_PATH);
 
     // Initialize main process
     this._initApp();
