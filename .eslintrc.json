@@ -5,9 +5,17 @@
     "es6": true
   },
   "extends": "eslint:recommended",
-  "parserOptions": {
-    "ecmaVersion": 2018
-  },
+  "parserOptions": { "ecmaVersion": 2018 },
+  "overrides": [
+    {
+      "files": "src/electron/**/*.js",
+      "parserOptions": { "sourceType": "script" }
+    },
+    {
+      "files": "src/renderer/**/*.js",
+      "parserOptions": { "sourceType": "module" }
+    }
+  ],
   "rules": {
     "strict": "error",
     "no-console": "off",
