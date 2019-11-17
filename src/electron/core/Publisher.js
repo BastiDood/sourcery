@@ -9,10 +9,10 @@ class Publisher {
    * @param {string} city
    */
   constructor(name, country, stateProvince, city) {
-    /** @private */ this._name = name;
-    /** @private */ this._country = country;
-    /** @private */ this._stateProvince = stateProvince;
-    /** @private */ this._city = city;
+    /** @private */ this._name = name.trim();
+    /** @private */ this._country = country.trim();
+    /** @private */ this._stateProvince = stateProvince.trim();
+    /** @private */ this._city = city.trim();
   }
 
   get name() { return this._name; }

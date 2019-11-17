@@ -18,7 +18,7 @@ class Citation {
   constructor(authors, publisher, title, publishDate, accessDate, url) {
     /** @private */ this._authors = authors;
     /** @private */ this._publisher = publisher;
-    /** @private */ this._title = title;
+    /** @private */ this._title = title.trim();
     /** @private */ this._publishDate = publishDate;
     /** @private */ this._accessDate = accessDate;
     /** @private */ this._url = url;
