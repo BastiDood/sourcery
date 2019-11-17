@@ -20,9 +20,9 @@ class Person {
   /** @param {string} newLast */
   set lastName(newLast) { this._last = newLast; }
 
-  get fullName() { return `${this._first} ${this._middle} ${this._last}`; }
-  get shortName() { return `${this._first[0]}. ${this._middle[0]}. ${this._last}`; }
-  get revShortName() { return `${this._last}, ${this._first[0]}. ${this._middle[0]}.`; }
+  get fullName() { return `${this._first} ${this._middle} ${this._last}`.trim(); }
+  get shortName() { return `${this._first[0]}. ${this._middle[0]}. ${this._last}`.trim(); }
+  get revShortName() { return `${this._last}, ${this._first[0]}. ${this._middle[0]}.`.trim(); }
 }
 
 module.exports = Person;
