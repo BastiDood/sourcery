@@ -15,25 +15,26 @@
         <!-- Selection of Citation Style -->
         <select name="citation-style" id="citation-style">
           <option value="APA">APA</option>
-          <option value="Chicago">Chicago</option>
-          <option value="MLA">MLA</option>
+          <option value="Chicago">*Chicago*</option>
+          <option value="MLA">*MLA*</option>
         </select>
 
         <!-- Selection of Citation Mode -->
         <select name="citation-mode" id="citation-mode" value="Web Resource">
           <optgroup label="Media Forms">
             <option value="Interview">*Art*</option>
-            <option value="Book">Book</option>
+            <option value="Book">*Book*</option>
             <option value="Broadcast">*Broadcast*</option>
             <option value="Film">*Film*</option>
             <option value="Interview">*Interview*</option>
-            <option value="Journal Article">Journal Article</option>
-            <option value="Periodical Article">Periodical Article</option>
+            <option value="Journal Article">*Journal Article*</option>
+            <option value="Periodical Article">*Periodical Article*</option>
             <option value="Song">*Song*</option>
             <option value="Web Resource" selected="selected">Web Resource</option>
           </optgroup>
           <optgroup label="Specific Platforms">
-              <option value="YouTube">YouTube Video</option>
+            <option value="Spotify">*Spotify Resource*</option>
+            <option value="YouTube">*YouTube Video*</option>
           </optgroup>
         </select>
 
@@ -61,7 +62,8 @@
         <!-- Submission -->
         <button type="submit" id="submitButt">Submit</button>
       </form>
-      <div id="citation-target"></div>
+      <!-- Citation Preview -->
+      <div id="citation-preview-target"></div>
     </main>
     <script src="./js/index.js" type="module"></script>
   </body>
