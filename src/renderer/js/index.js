@@ -1,5 +1,17 @@
 document.addEventListener('DOMContentLoaded', () => {
   // Set necessary variables for each input element
+  /** @type {HTMLFormElement} */
+  const el_Form = (document.getElementById('main-form'));
+  /** @type {HTMLSelectElement} */
+  const el_CitationStyle = (document.getElementById('citation-style'));
+  /** @type {HTMLSelectElement} */
+  const el_CitationMode = (document.getElementById('citation-mode'));
+
+  // Prevent default behavior of form submission
+  el_Form.addEventListener('submit', event => {
+    event.preventDefault();
+  });
+
   /** @type {HTMLInputElement} */
   const firstName = (document.getElementById('firstName'));
   /** @type {HTMLInputElement} */
@@ -21,7 +33,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // Set default date to today for access date
   const today = new Date();
-  accessDate.value = `${today.getFullYear()}-${today.getMonth() + 1}-${today.getDate()}`;
+  accessDate.value = accessDate.max = `${today.getFullYear()}-${today.getMonth() + 1}-${today.getDate()}`;
 
   // Send data
   function submitLister() {

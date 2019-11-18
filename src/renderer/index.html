@@ -20,28 +20,47 @@
         </select>
 
         <!-- Selection of Citation Mode -->
-        <select name="citation-style" id="citation-style">
+        <select name="citation-mode" id="citation-mode" value="Web Resource">
           <optgroup label="Media Forms">
+            <option value="Interview">*Art*</option>
             <option value="Book">Book</option>
-            <option value="Interview">Interview</option>
+            <option value="Broadcast">*Broadcast*</option>
+            <option value="Film">*Film*</option>
+            <option value="Interview">*Interview*</option>
             <option value="Journal Article">Journal Article</option>
-            <option value="Web">Web Resource</option>
+            <option value="Periodical Article">Periodical Article</option>
+            <option value="Song">*Song*</option>
+            <option value="Web Resource" selected="selected">Web Resource</option>
           </optgroup>
-          <optgroup label="Specific Websites">
+          <optgroup label="Specific Platforms">
               <option value="YouTube">YouTube Video</option>
           </optgroup>
         </select>
-      </form>
 
-      <!-- MVP Input -->
-      <input placeholder="First Name" type="text" name="firstName" id="firstName" />
-      <input placeholder="Middle Name" type="text" name="middleName" id="middleName" />
-      <input placeholder="Last Name" type="text" name="lastName" id="lastName" required="required" />
-      <input placeholder="Title" type="text" name="title" id="title">
-      <input type="date" name="publishDate" id="publishDate" />
-      <input type="date" name="accessDate" id="accessDate" />
-      <input placeholder="URL" type="url" name="url" id="url" />
-      <button type="submit" id="submitButt">Submit</button>
+        <!-- Common Inputs -->
+        <input placeholder="First Name" type="text" name="firstName" id="firstName" />
+        <input placeholder="Middle Name" type="text" name="middleName" id="middleName" />
+        <input placeholder="Last Name" type="text" name="lastName" id="lastName" />
+        <input placeholder="Title" type="text" name="title" id="title" />
+        <input placeholder="Date Published" type="date" name="publishDate" id="publishDate" />
+        <input placeholder="Date Accessed" type="date" name="accessDate" id="accessDate" />
+        <input placeholder="URL" type="url" name="url" id="url" />
+        <input placeholder="DOI" type="text" name="doi" id="doi" />
+
+        <!-- Published Media Inputs -->
+        <input placeholder="Publisher" type="text" name="publisherName" id="publisherName" />
+        <input placeholder="Country" type="text" name="publisherCountry" id="publisherCountry" />
+        <input placeholder="State/Province" type="text" name="publisherStateProvince" id="publisherStateProvince" />
+        <input placeholder="City" type="text" name="publisherCity" id="publisherCity" />
+        <input placeholder="Publication Title" type="text" name="publicationTitle" id="publicationTitle" />
+        <input placeholder="Volume" type="number" min="0" name="volume" id="volume" />
+        <input placeholder="Issue" type="number" min="0" name="issue" id="issue" />
+        <input placeholder="Start Page" type="number" min="0" name="startPage" id="startPage" />
+        <input placeholder="End Page" type="number" min="0" name="endPage" id="endPage" />
+
+        <!-- Submission -->
+        <button type="submit" id="submitButt">Submit</button>
+      </form>
       <div id="citation-target"></div>
     </main>
     <script src="./js/index.js" type="module"></script>
