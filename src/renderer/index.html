@@ -27,8 +27,7 @@
             <option value="BROADCAST">*Broadcast*</option>
             <option value="FILM">*Film*</option>
             <option value="INTERVIEW">*Interview*</option>
-            <option value="JOURNAL_ARTICLE">*Journal Article*</option>
-            <option value="PERIODICAL_ARTICLE">*Periodical Article*</option>
+            <option value="JOURNAL_PERIODICAL_ARTICLE">*Journal/Periodical Article*</option>
             <option value="SONG">*Song*</option>
             <option value="WEB_RESOURCE" selected="selected">Web Resource</option>
           </optgroup>
@@ -49,15 +48,15 @@
         <input placeholder="DOI" type="text" name="doi" id="doi" />
 
         <!-- Published Media Inputs -->
-        <input placeholder="Publisher" type="text" name="publisherName" id="publisherName" />
-        <input placeholder="Country" type="text" name="publisherCountry" id="publisherCountry" />
-        <input placeholder="State/Province" type="text" name="publisherStateProvince" id="publisherStateProvince" />
-        <input placeholder="City" type="text" name="publisherCity" id="publisherCity" />
         <input placeholder="Publication Title" type="text" name="publicationTitle" id="publicationTitle" />
         <input placeholder="Volume" type="number" min="0" name="volume" id="volume" />
         <input placeholder="Issue" type="number" min="0" name="issue" id="issue" />
         <input placeholder="Start Page" type="number" min="0" name="startPage" id="startPage" />
         <input placeholder="End Page" type="number" min="0" name="endPage" id="endPage" />
+        <input placeholder="Publisher" type="text" name="publisherName" id="publisherName" />
+        <input placeholder="Country" type="text" name="publisherCountry" id="publisherCountry" />
+        <input placeholder="State/Province" type="text" name="publisherStateProvince" id="publisherStateProvince" />
+        <input placeholder="City" type="text" name="publisherCity" id="publisherCity" />
 
         <!-- Submission -->
         <button type="submit" id="submitButt">Submit</button>
