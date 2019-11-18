@@ -6,12 +6,6 @@ document.addEventListener('DOMContentLoaded', () => {
   const el_CitationStyle = (document.getElementById('citation-style'));
   /** @type {HTMLSelectElement} */
   const el_CitationMode = (document.getElementById('citation-mode'));
-
-  // Prevent default behavior of form submission
-  el_Form.addEventListener('submit', event => {
-    event.preventDefault();
-  });
-
   /** @type {HTMLInputElement} */
   const el_FirstName = (document.getElementById('firstName'));
   /** @type {HTMLInputElement} */
@@ -33,10 +27,15 @@ document.addEventListener('DOMContentLoaded', () => {
   /** @type {HTMLDivElement} */
   const el_PreviewTarget = (document.getElementById('citation-preview-target'));
 
+  // Prevent default behavior of form submission
+  el_Form.addEventListener('submit', event => {
+    event.preventDefault();
+  });
+
   // Set default date to today for access date
-  const today = new Date();
+  const TODAY = new Date();
   el_AccessDate.value = el_AccessDate.max = el_PublishDate.max =
-    `${today.getFullYear()}-${today.getMonth() + 1}-${today.getDate()}`;
+    `${TODAY.getFullYear()}-${TODAY.getMonth() + 1}-${TODAY.getDate()}`;
 
   // Send data
   function submitLister() {
