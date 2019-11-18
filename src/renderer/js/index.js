@@ -24,7 +24,7 @@ document.addEventListener('DOMContentLoaded', () => {
   accessDate.value = `${today.getFullYear()}-${today.getMonth() + 1}-${today.getDate()}`;
 
   // Send data
-  butt.addEventListener('click', () => {
+  function submitLister() {
     /** @type {import('../../electron/core/Citation')} */
     const citation = window['sendData']({
       firstName: firstName.value,
@@ -36,5 +36,6 @@ document.addEventListener('DOMContentLoaded', () => {
       url: url.value
     });
     target.innerHTML = citation.APA;
-  });
+  }
+  butt.addEventListener('click', submitLister);
 });

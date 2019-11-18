@@ -64,7 +64,7 @@ class Main {
 
   _initMenu() {
     const { Menu } = Electron;
-    // Menu.setApplicationMenu(null);
+    Menu.setApplicationMenu(null);
   }
 }
 

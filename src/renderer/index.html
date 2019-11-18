@@ -11,6 +11,29 @@
   </head>
   <body>
     <main>
+      <form name="main-form" id="main-form">
+        <!-- Selection of Citation Style -->
+        <select name="citation-style" id="citation-style">
+          <option value="APA">APA</option>
+          <option value="Chicago">Chicago</option>
+          <option value="MLA">MLA</option>
+        </select>
+
+        <!-- Selection of Citation Mode -->
+        <select name="citation-style" id="citation-style">
+          <optgroup label="Media Forms">
+            <option value="Book">Book</option>
+            <option value="Interview">Interview</option>
+            <option value="Journal Article">Journal Article</option>
+            <option value="Web">Web Resource</option>
+          </optgroup>
+          <optgroup label="Specific Websites">
+              <option value="YouTube">YouTube Video</option>
+          </optgroup>
+        </select>
+      </form>
+
+      <!-- MVP Input -->
       <input placeholder="First Name" type="text" name="firstName" id="firstName" />
       <input placeholder="Middle Name" type="text" name="middleName" id="middleName" />
       <input placeholder="Last Name" type="text" name="lastName" id="lastName" required="required" />
