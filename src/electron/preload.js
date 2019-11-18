@@ -11,6 +11,7 @@ const Publisher = require('./core/Publisher');
  * @property {string} DataSubmission.middleName
  * @property {string} DataSubmission.lastName
  * @property {string} DataSubmission.title
+ * @property {string} DataSubmission.publisherName
  * @property {string} DataSubmission.publishDate
  * @property {string} DataSubmission.accessDate
  * @property {string} DataSubmission.url
@@ -24,6 +25,7 @@ function sendData({
   middleName,
   lastName,
   title,
+  publisherName,
   publishDate,
   accessDate,
   url
@@ -35,7 +37,7 @@ function sendData({
   // TODO: Store citation to disk
   return new Citation(
     [ person ],
-    new Publisher('Chiong Press', 'Philippines', 'NCR', 'San Juan City'),
+    new Publisher(publisherName, 'Philippines', 'NCR', 'San Juan City'),
     title,
     published,
     accessed,

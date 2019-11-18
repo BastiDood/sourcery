@@ -1,7 +1,9 @@
+import PROFILES from './citation-profiles.js';
+
 document.addEventListener('DOMContentLoaded', () => {
   // Set necessary variables for each input element
   /** @type {HTMLFormElement} */
-  const el_Form = (document.getElementById('main-form'));
+  const el_MainForm = (document.getElementById('main-form'));
   /** @type {HTMLSelectElement} */
   const el_CitationStyle = (document.getElementById('citation-style'));
   /** @type {HTMLSelectElement} */
@@ -22,22 +24,35 @@ document.addEventListener('DOMContentLoaded', () => {
   const el_Url = (document.getElementById('url'));
   /** @type {HTMLInputElement} */
   const el_Doi = (document.getElementById('doi'));
+  /** @type {HTMLInputElement} */
+  const el_PublisherName = (document.getElementById('publisherName'));
+
+  // Form controls
   /** @type {HTMLButtonElement} */
   const el_Butt = (document.getElementById('submitButt'));
   /** @type {HTMLDivElement} */
   const el_PreviewTarget = (document.getElementById('citation-preview-target'));
 
-  // Prevent default behavior of form submission
-  el_Form.addEventListener('submit', event => {
-    event.preventDefault();
-  });
+  // Remove unnecessary inputs for selected citation mode
+  function filterInputs() {
+    /** @type {HTMLInputElement[]} */
+    const inputs = Array.from(document.querySelectorAll('#main-form > input'));
+    const CITATION_MODE = el_CitationMode.value;
+    for (const input of inputs)
+      if (PROFILES[CITATION_MODE].includes(input.name))
+        input.classList.remove('disabled');
+      else
+        input.classList.add('disabled');
+  }
+  filterInputs();
+  el_CitationMode.addEventListener('change', filterInputs);
 
   // Set default date to today for access date
   const TODAY = new Date();
   el_AccessDate.value = el_AccessDate.max = el_PublishDate.max =
     `${TODAY.getFullYear()}-${TODAY.getMonth() + 1}-${TODAY.getDate()}`;
 
-  // Send data
+  // Send arbitrary data
   function submitLister() {
     /** @type {import('../../electron/core/Citation')} */
     const citation = window['sendData']({
@@ -45,6 +60,7 @@ document.addEventListener('DOMContentLoaded', () => {
       middleName: el_MiddleName.value,
       lastName: el_LastName.value,
       title: el_Title.value,
+      publisherName: el_PublisherName.value,
       publishDate: el_PublishDate.value,
       accessDate: el_AccessDate.value,
       url: el_Url.value
@@ -52,4 +68,9 @@ document.addEventListener('DOMContentLoaded', () => {
     el_PreviewTarget.innerHTML = citation[el_CitationStyle.value];
   }
   el_Butt.addEventListener('click', submitLister);
+  // Prevent default behavior of form submission
+  el_MainForm.addEventListener('submit', event => {
+    event.preventDefault();
+    submitLister();
+  });
 });
