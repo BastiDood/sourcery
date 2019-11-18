@@ -26,7 +26,7 @@ class Main {
      * @private
      * @readonly
      */
-    this._PRELOAD_SCRIPT_PATH = path.resolve(this._app.getAppPath(), 'src/electron/preload.js');
+    this._PRELOAD_SCRIPT_PATH = path.resolve(this._app.getAppPath(), './src/electron/preload.js');
 
     // Initialize main process
     this._initApp();
@@ -47,7 +47,8 @@ class Main {
       backgroundColor: '#000000',
       darkTheme: true,
       webPreferences: {
-        contextIsolation: true,
+        // TODO: Turn on `contextIsolation` in the future.
+        contextIsolation: false,
         enableRemoteModule: false,
         nodeIntegration: false,
         nodeIntegrationInSubFrames: false,
@@ -63,7 +64,7 @@ class Main {
 
   _initMenu() {
     const { Menu } = Electron;
-    Menu.setApplicationMenu(null);
+    // Menu.setApplicationMenu(null);
   }
 }
 

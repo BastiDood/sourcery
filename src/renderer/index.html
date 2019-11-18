@@ -10,8 +10,17 @@
     <title>Citation Dood</title>
   </head>
   <body>
-    <main class="title flex center-both">
-      Welcome to Citation Dood!
+    <main>
+      <input placeholder="First Name" type="text" name="firstName" id="firstName" />
+      <input placeholder="Middle Name" type="text" name="middleName" id="middleName" />
+      <input placeholder="Last Name" type="text" name="lastName" id="lastName" required="required" />
+      <input placeholder="Title" type="text" name="title" id="title">
+      <input type="date" name="publishDate" id="publishDate" />
+      <input type="date" name="accessDate" id="accessDate" />
+      <input placeholder="URL" type="url" name="url" id="url" />
+      <button type="submit" id="submitButt">Submit</button>
+      <div id="citation-target"></div>
     </main>
+    <script src="./js/index.js" type="module"></script>
   </body>
 </html>
