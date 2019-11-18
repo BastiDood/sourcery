@@ -3,9 +3,7 @@
   src: url(../fonts/Roboto-Regular.ttf);
 }
 
-* {
-  box-sizing: border-box;
-}
+* { box-sizing: border-box; }
 
 :root {
   --ui-text-color: #FFF;
