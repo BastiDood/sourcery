@@ -46,7 +46,7 @@ class Citation {
     const title = this._title;
     const published = `${this._publishDate.getFullYear()}, ${MONTHS[this._publishDate.getMonth()]} ${this._publishDate.getDate()}`;
     const accessed = `${MONTHS[this._accessDate.getMonth()]} ${this._accessDate.getDate()}, ${this._accessDate.getFullYear()}`;
-    const url = this._url.href;
+    const url = `<a href="${this._url.href}">${this._url.href}</a>`;
     return `${author} (${published}). ${title}. Retrieved ${accessed}, from ${publisher}: ${url}.`;
   }
 }
