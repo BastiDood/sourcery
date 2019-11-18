@@ -35,7 +35,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // Set default date to today for access date
   const today = new Date();
-  el_AccessDate.value = el_AccessDate.max = `${today.getFullYear()}-${today.getMonth() + 1}-${today.getDate()}`;
+  el_AccessDate.value = el_AccessDate.max = el_PublishDate.max =
+    `${today.getFullYear()}-${today.getMonth() + 1}-${today.getDate()}`;
 
   // Send data
   function submitLister() {
@@ -49,7 +50,7 @@ document.addEventListener('DOMContentLoaded', () => {
       accessDate: el_AccessDate.value,
       url: el_Url.value
     });
-    el_PreviewTarget.innerHTML = citation.APA;
+    el_PreviewTarget.innerHTML = citation[el_CitationStyle.value];
   }
   el_Butt.addEventListener('click', submitLister);
 });
