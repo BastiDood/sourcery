@@ -13,41 +13,43 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   /** @type {HTMLInputElement} */
-  const firstName = (document.getElementById('firstName'));
+  const el_FirstName = (document.getElementById('firstName'));
   /** @type {HTMLInputElement} */
-  const middleName = (document.getElementById('middleName'));
+  const el_MiddleName = (document.getElementById('middleName'));
   /** @type {HTMLInputElement} */
-  const lastName = (document.getElementById('lastName'));
+  const el_LastName = (document.getElementById('lastName'));
   /** @type {HTMLInputElement} */
-  const title = (document.getElementById('title'));
+  const el_Title = (document.getElementById('title'));
   /** @type {HTMLInputElement} */
-  const publishDate = (document.getElementById('publishDate'));
+  const el_PublishDate = (document.getElementById('publishDate'));
   /** @type {HTMLInputElement} */
-  const accessDate = (document.getElementById('accessDate'));
+  const el_AccessDate = (document.getElementById('accessDate'));
   /** @type {HTMLInputElement} */
-  const url = (document.getElementById('url'));
+  const el_Url = (document.getElementById('url'));
+  /** @type {HTMLInputElement} */
+  const el_Doi = (document.getElementById('doi'));
   /** @type {HTMLButtonElement} */
-  const butt = (document.getElementById('submitButt'));
+  const el_Butt = (document.getElementById('submitButt'));
   /** @type {HTMLDivElement} */
-  const target = (document.getElementById('citation-target'));
+  const el_PreviewTarget = (document.getElementById('citation-preview-target'));
 
   // Set default date to today for access date
   const today = new Date();
-  accessDate.value = accessDate.max = `${today.getFullYear()}-${today.getMonth() + 1}-${today.getDate()}`;
+  el_AccessDate.value = el_AccessDate.max = `${today.getFullYear()}-${today.getMonth() + 1}-${today.getDate()}`;
 
   // Send data
   function submitLister() {
     /** @type {import('../../electron/core/Citation')} */
     const citation = window['sendData']({
-      firstName: firstName.value,
-      middleName: middleName.value,
-      lastName: lastName.value,
-      title: title.value,
-      publishDate: publishDate.value,
-      accessDate: accessDate.value,
-      url: url.value
+      firstName: el_FirstName.value,
+      middleName: el_MiddleName.value,
+      lastName: el_LastName.value,
+      title: el_Title.value,
+      publishDate: el_PublishDate.value,
+      accessDate: el_AccessDate.value,
+      url: el_Url.value
     });
-    target.innerHTML = citation.APA;
+    el_PreviewTarget.innerHTML = citation.APA;
   }
-  butt.addEventListener('click', submitLister);
+  el_Butt.addEventListener('click', submitLister);
 });
