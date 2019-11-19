@@ -5,3 +5,11 @@
   padding: 0.5rem;
   border-radius: 0.5rem;
 }
+
+#citation-preview-target {
+  display: none;
+  margin: 0.5rem;
+  background-color: #647174;
+  border-radius: 0.5rem;
+  padding: 0.5rem;
+}

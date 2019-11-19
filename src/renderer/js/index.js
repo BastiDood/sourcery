@@ -69,6 +69,7 @@ document.addEventListener('DOMContentLoaded', () => {
       url: el_Url.value
     });
     el_PreviewTarget.innerHTML = citation[el_CitationStyle.value];
+    el_PreviewTarget.style.display = 'block';
   }
   el_Butt.addEventListener('click', submitLister);
   // Prevent default behavior of form submission
