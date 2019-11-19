@@ -34,15 +34,16 @@ class Main {
   }
 
   _initApp() {
-    this._app.once('ready', () => {
-      this._window = this._createWindow();
-      this._window.maximize();
-      this._window.show();
-    });
-    this._app.once('window-all-closed', () => {
-      if (process.platform !== 'darwin')
-        this._app.quit();
-    });
+    this._app
+      .once('ready', () => {
+        this._window = this._createWindow();
+        this._window.maximize();
+        this._window.show();
+      })
+      .once('window-all-closed', () => {
+        if (process.platform !== 'darwin')
+          this._app.quit();
+      });
   }
 
   _createWindow() {
