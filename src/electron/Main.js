@@ -44,7 +44,7 @@ class Main {
   _createWindow() {
     const { BrowserWindow } = Electron;
     const win = new BrowserWindow({
-      backgroundColor: '#000000',
+      backgroundColor: '#22222f',
       darkTheme: true,
       webPreferences: {
         // TODO: Turn on `contextIsolation` in the future.
