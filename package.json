@@ -1,5 +1,5 @@
 {
-  "name": "citation-dood",
+  "name": "cite-seer",
   "version": "0.1.0",
   "description": "This is an app that manages citations.",
   "main": "src/main.js",
@@ -17,8 +17,8 @@
     "jest": "^24.9.0"
   },
   "build": {
-    "appId": "ortiz.basti.citationdood",
-    "productName": "Citation Dood",
+    "appId": "ortiz.basti.citeseer",
+    "productName": "CiteSeer",
     "copyright": "Copyright © 2019 Basti Ortiz"
   }
 }
