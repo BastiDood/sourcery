@@ -9,9 +9,11 @@
   --ui-text-color: #FFF;
   --ui-text-font: Roboto;
   --ui-title-font-size: 4rem;
+  --ui-background-color: #22222f;
 }
 
 html {
+  background-color: var(--ui-background-color);
   color: var(--ui-text-color);
   font-family: var(--ui-text-font);
   cursor: default;
