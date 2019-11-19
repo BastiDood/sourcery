@@ -38,25 +38,76 @@
         </select>
 
         <!-- Common Inputs -->
-        <input placeholder="First Name" type="text" name="firstName" id="firstName" />
-        <input placeholder="Middle Name" type="text" name="middleName" id="middleName" />
-        <input placeholder="Last Name" type="text" name="lastName" id="lastName" />
-        <input placeholder="Title" type="text" name="title" id="title" />
-        <input placeholder="Date Published" type="date" name="publishDate" id="publishDate" />
-        <input placeholder="Date Accessed" type="date" name="accessDate" id="accessDate" />
-        <input placeholder="URL" type="url" name="url" id="url" />
-        <input placeholder="DOI" type="text" name="doi" id="doi" />
+        <div class="input-entry">
+          <label for="firstName">First Name</label>
+          <input placeholder="Tyron" type="text" name="firstName" id="firstName" />
+        </div>
+        <div class="input-entry">
+          <label for="middleName">Middle Name</label>
+          <input placeholder="Go" type="text" name="middleName" id="middleName" />
+        </div>
+        <div class="input-entry">
+          <label for="lastName">Last Name</label>
+          <input placeholder="Chiong" type="text" name="lastName" id="lastName" />
+        </div>
+        <div class="input-entry">
+          <label for="title">Title</label>
+          <input placeholder="The Greatest Mind" type="text" name="title" id="title" />
+        </div>
+        <div class="input-entry">
+          <label for="publishDate">Date Published</label>
+          <input placeholder="Date Published" type="date" name="publishDate" id="publishDate" />
+        </div>
+        <div class="input-entry">
+          <label for="accessDate">Date Accessed</label>
+          <input placeholder="Date Accessed" type="date" name="accessDate" id="accessDate" />
+        </div>
+        <div class="input-entry">
+          <label for="url">URL</label>
+          <input placeholder="https://www.google.com/" type="url" name="url" id="url" />
+        </div>
+        <div class="input-entry">
+          <label for="doi">DOI</label>
+          <input placeholder="10.1000/abc1000000" type="text" name="doi" id="doi" />
+        </div>
 
         <!-- Published Media Inputs -->
-        <input placeholder="Publication Title" type="text" name="publicationTitle" id="publicationTitle" />
-        <input placeholder="Volume" type="number" min="0" name="volume" id="volume" />
-        <input placeholder="Issue" type="number" min="0" name="issue" id="issue" />
-        <input placeholder="Start Page" type="number" min="0" name="startPage" id="startPage" />
-        <input placeholder="End Page" type="number" min="0" name="endPage" id="endPage" />
-        <input placeholder="Publisher" type="text" name="publisherName" id="publisherName" />
-        <input placeholder="Country" type="text" name="publisherCountry" id="publisherCountry" />
-        <input placeholder="State/Province" type="text" name="publisherStateProvince" id="publisherStateProvince" />
-        <input placeholder="City" type="text" name="publisherCity" id="publisherCity" />
+        <div class="input-entry">
+          <label for="publicationTitle">Publication Title</label>
+          <input placeholder="Pixel Art 101" type="text" name="publicationTitle" id="publicationTitle" />
+        </div>
+        <div class="input-entry">
+          <label for="volume">Volume</label>
+          <input placeholder="1" type="number" min="1" name="volume" id="volume" />
+        </div>
+        <div class="input-entry">
+          <label for="issue">Issue</label>
+          <input placeholder="1" type="number" min="1" name="issue" id="issue" />
+        </div>
+        <div class="input-entry">
+          <label for="startPage">Start Page</label>
+          <input placeholder="1" type="number" min="1" name="startPage" id="startPage" />
+        </div>
+        <div class="input-entry">
+          <label for="endPage">End Page</label>
+          <input placeholder="1" type="number" min="1" name="endPage" id="endPage" />
+        </div>
+        <div class="input-entry">
+          <label for="publicationName">Publisher Name</label>
+          <input placeholder="Chiong Press" type="text" name="publisherName" id="publisherName" />
+        </div>
+        <div class="input-entry">
+          <label for="publisherCountry">Country</label>
+          <input placeholder="Philippines" type="text" name="publisherCountry" id="publisherCountry" />
+        </div>
+        <div class="input-entry">
+          <label for="publisherStateProvince">State/Province</label>
+          <input placeholder="NCR" type="text" name="publisherStateProvince" id="publisherStateProvince" />
+        </div>
+        <div class="input-entry">
+          <label for="publicationCity">City</label>
+          <input placeholder="San Juan CIty" type="text" name="publisherCity" id="publisherCity" />
+        </div>
 
         <!-- Submission -->
         <button type="submit" id="submitButt">Submit</button>

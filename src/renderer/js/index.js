@@ -35,14 +35,17 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // Remove unnecessary inputs for selected citation mode
   function filterInputs() {
-    /** @type {HTMLInputElement[]} */
-    const inputs = Array.from(document.querySelectorAll('#main-form > input'));
+    /** @type {HTMLDivElement[]} */
+    const divs = (Array.from(document.getElementsByClassName('input-entry')));
     const CITATION_MODE = el_CitationMode.value;
-    for (const input of inputs)
+    for (const div of divs) {
+      /** @type {HTMLInputElement} */
+      const input = (div.children[1]);
       if (PROFILES[CITATION_MODE].includes(input.name))
-        input.classList.remove('disabled');
+        div.classList.remove('disabled');
       else
-        input.classList.add('disabled');
+        div.classList.add('disabled');
+    }
   }
   filterInputs();
   el_CitationMode.addEventListener('change', filterInputs);
