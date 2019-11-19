@@ -34,7 +34,11 @@ class Main {
   }
 
   _initApp() {
-    this._app.once('ready', () => this._window = this._createWindow().maximize());
+    this._app.once('ready', () => {
+      this._window = this._createWindow();
+      this._window.maximize();
+      this._window.show();
+    });
     this._app.once('window-all-closed', () => {
       if (process.platform !== 'darwin')
         this._app.quit();
@@ -46,6 +50,7 @@ class Main {
     const win = new BrowserWindow({
       backgroundColor: '#22222f',
       darkTheme: true,
+      show: false,
       webPreferences: {
         // TODO: Turn on `contextIsolation` in the future.
         contextIsolation: false,
@@ -53,7 +58,7 @@ class Main {
         nodeIntegration: false,
         nodeIntegrationInSubFrames: false,
         nodeIntegrationInWorker: false,
-        preload: this._PRELOAD_SCRIPT_PATH
+        preload: this._PRELOAD_SCRIPT_PATH,
       }
     }).once('closed', () => this._window = null);
     win.webContents.session
