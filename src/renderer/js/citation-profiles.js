@@ -7,6 +7,8 @@ const COMMON_PROFILE = [
   'accessDate'
 ];
 
+const SPECIAL_PROFILE = [ 'url' ];
+
 const PROFILES = {
   JOURNAL_PERIODICAL_ARTICLE: [
     ...COMMON_PROFILE,
@@ -26,7 +28,13 @@ const PROFILES = {
     'publisherName',
     'url',
     'doi'
-  ]
+  ],
+  RAPPLER: SPECIAL_PROFILE,
+  SPOTIFY: SPECIAL_PROFILE,
+  GUARDIAN: SPECIAL_PROFILE,
+  YOUTUBE: SPECIAL_PROFILE
 };
 
+// TODO: Adjust data structure to include alternative name
+// { name: 'author', alt: 'Artist' }
 export default PROFILES;
