@@ -7,3 +7,7 @@
   text-align: center;
   height: 100%;
 }
+.hanging-indent {
+  text-indent: -3rem;
+  padding-left: 3rem;
+}

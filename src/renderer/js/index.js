@@ -38,7 +38,7 @@ document.addEventListener('DOMContentLoaded', () => {
       accessDate: FORM_INPUT.el_AccessDate.value,
       url: FORM_INPUT.el_Url.value
     });
-    FORM_CONTROLS.el_PreviewTarget.innerHTML = citation[FORM_INPUT.el_CitationStyle.value];
+    FORM_CONTROLS.el_PreviewTarget.children[0].innerHTML = citation[FORM_INPUT.el_CitationStyle.value];
     FORM_CONTROLS.el_PreviewTarget.style.display = 'block';
   }
   FORM_CONTROLS.el_Butt.addEventListener('click', submitLister);
