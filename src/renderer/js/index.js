@@ -22,7 +22,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // Set default date to today for access date
   const TODAY = new Date();
-  FORM_INPUT.el_AccessDate.value = FORM_INPUT.el_AccessDate.max = FORM_INPUT.el_PublishDate.max =
+  FORM_INPUT.el_AccessDate.value =
+  FORM_INPUT.el_AccessDate.max =
+  FORM_INPUT.el_PublishDate.max =
     `${TODAY.getFullYear()}-${TODAY.getMonth() + 1}-${TODAY.getDate()}`;
 
   // Send arbitrary data
@@ -42,6 +44,7 @@ document.addEventListener('DOMContentLoaded', () => {
     FORM_CONTROLS.el_PreviewTarget.style.display = 'block';
   }
   FORM_CONTROLS.el_Butt.addEventListener('click', submitLister);
+
   // Prevent default behavior of form submission
   FORM_INPUT.el_MainForm.addEventListener('submit', event => {
     event.preventDefault();
