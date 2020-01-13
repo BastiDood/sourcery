@@ -22,10 +22,13 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // Set default date to today for access date
   const TODAY = new Date();
+  const YEAR = TODAY.getFullYear();
+  const MONTH = (TODAY.getMonth() + 1).toString().padStart(2, '0');
+  const DAY = (TODAY.getDate() + 1).toString().padStart(2, '0');
   FORM_INPUT.el_AccessDate.value =
   FORM_INPUT.el_AccessDate.max =
   FORM_INPUT.el_PublishDate.max =
-    `${TODAY.getFullYear()}-${(TODAY.getMonth() + 1).toString().padStart(2, '0')}-${TODAY.getDate()}`;
+    `${YEAR}-${MONTH}-${DAY}`;
 
   // Send arbitrary data
   function submitLister() {
