@@ -25,7 +25,7 @@ document.addEventListener('DOMContentLoaded', () => {
   FORM_INPUT.el_AccessDate.value =
   FORM_INPUT.el_AccessDate.max =
   FORM_INPUT.el_PublishDate.max =
-    `${TODAY.getFullYear()}-${TODAY.getMonth() + 1}-${TODAY.getDate()}`;
+    `${TODAY.getFullYear()}-${(TODAY.getMonth() + 1).toString().padStart(2, '0')}-${TODAY.getDate()}`;
 
   // Send arbitrary data
   function submitLister() {
