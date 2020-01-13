@@ -3,9 +3,8 @@
   "version": "0.1.0",
   "description": "This is an app that manages citations.",
   "main": "src/main.js",
-  "type": "module",
   "scripts": {
-    "start": "electron . --js-flags=\"--experimental-modules\"",
+    "start": "electron .",
     "test": "jest --watchAll",
     "build": "electron-builder build"
   },
@@ -13,7 +12,7 @@
   "license": "GPL-3.0-or-later",
   "devDependencies": {
     "@types/jest": "^24.0.25",
-    "electron": "^7.1.7",
+    "electron": "^7.1.8",
     "electron-builder": "^21.2.0",
     "jest": "^24.9.0"
   },
