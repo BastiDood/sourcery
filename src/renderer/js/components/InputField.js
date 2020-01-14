@@ -11,17 +11,16 @@ export class InputField extends HTMLElement {
     this._placeholder = this.getAttribute('placeholder');
     this._id = this.getAttribute('id');
 
+    // Define optional attributes
+    this._min = this.getAttribute('min');
+    this._max = this.getAttribute('max');
+
     // Create DOM elements and expose the `<input>` tag
-    const el_Style = document.createElement('style');
     const el_Label = document.createElement('label');
     const el_Input = this._el_Input = document.createElement('input');
-
-    // Set attributes
-    el_Label.innerHTML = this._label;
-    el_Label.setAttribute('for', this._id);
-    el_Input.setAttribute('type', this._type);
-    el_Input.setAttribute('placeholder', this._placeholder);
-    el_Input.setAttribute('name', this._id);
+    
+    // Set basic styles
+    const el_Style = document.createElement('style');
     el_Style.textContent = `
       :host {
         display: none;
@@ -33,6 +32,19 @@ export class InputField extends HTMLElement {
       }
     `;
     this._enableDisplay();
+
+    // Set required attributes
+    el_Label.innerHTML = this._label;
+    el_Label.setAttribute('for', this._id);
+    el_Input.setAttribute('type', this._type);
+    el_Input.setAttribute('placeholder', this._placeholder);
+    el_Input.setAttribute('name', this._id);
+
+    // Set optional attributes
+    if (this._min)
+      el_Input.min = this._min;
+    if (this._max)
+      el_Input.max = this._max;
 
     // Establish hierarchy
     this._shadowRoot.append(el_Style);

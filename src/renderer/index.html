@@ -59,22 +59,10 @@
 
         <!-- Published Media Inputs -->
         <input-field type="text" placeholder="Nature" id="publicationTitle">Publication Title</input-field>
-        <div class="input-entry">
-          <label for="volume">Volume</label>
-          <input placeholder="1" type="number" min="1" name="volume" id="volume" />
-        </div>
-        <div class="input-entry">
-          <label for="issue">Issue</label>
-          <input placeholder="1" type="number" min="1" name="issue" id="issue" />
-        </div>
-        <div class="input-entry">
-          <label for="startPage">Start Page</label>
-          <input placeholder="1" type="number" min="1" name="startPage" id="startPage" />
-        </div>
-        <div class="input-entry">
-          <label for="endPage">End Page</label>
-          <input placeholder="1" type="number" min="1" name="endPage" id="endPage" />
-        </div>
+        <input-field type="number" min="0" placeholder="1" id="volume">Volume</input-field>
+        <input-field type="number" min="0" placeholder="1" id="issue">Issue</input-field>
+        <input-field type="number" min="1" placeholder="1" id="startPage">Start Page</input-field>
+        <input-field type="number" min="2" placeholder="2" id="endPage">End Page</input-field>
         <input-field type="text" placeholder="Chiong Press" id="publisherName">Publisher Name</input-field>
         <input-field type="text" placeholder="Philippines" id="publisherCountry">Country</input-field>
         <input-field type="text" placeholder="NCR" id="publisherStateProvince">State/Province</input-field>
