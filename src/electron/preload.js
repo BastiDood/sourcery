@@ -17,9 +17,7 @@ const Publisher = require('./core/Publisher');
  * @property {string} DataSubmission.url
  */
 
-/**
- * @param {DataSubmission} data
- */
+/** @param {DataSubmission} data */
 function sendData({
   firstName,
   middleName,
@@ -35,6 +33,8 @@ function sendData({
   const published = new Date(publishDate);
   const accessed = new Date(accessDate);
   // TODO: Store citation to disk
+  // TODO: Validate if start page is greater than end page
+  // TODO: Sanitize user input
   return new Citation(
     [ person ],
     new Publisher(publisherName, 'Philippines', 'NCR', 'San Juan City'),
