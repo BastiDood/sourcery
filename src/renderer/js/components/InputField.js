@@ -41,10 +41,12 @@ export class InputField extends HTMLElement {
     el_Input.setAttribute('name', this._id);
 
     // Set optional attributes
-    if (this._min)
-      el_Input.min = this._min;
-    if (this._max)
-      el_Input.max = this._max;
+    if (this._type === 'number') {
+      if (this._min)
+        el_Input.min = this._min;
+      if (this._max)
+        el_Input.max = this._max;
+    }
 
     // Establish hierarchy
     this._shadowRoot.append(el_Style);
