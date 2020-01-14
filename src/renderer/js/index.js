@@ -3,19 +3,18 @@ import * as FORM_INPUT from './dom/form-input.js';
 import * as FORM_CONTROLS from './dom/form-controls.js';
 
 document.addEventListener('DOMContentLoaded', () => {
+  /** @type {import('./components/InputField').InputField[]} */
+  const el_inputEntries = (Array.from(document.getElementsByTagName('input-field')));
+
   // Remove unnecessary inputs for selected citation mode
   function filterInputs() {
-    /** @type {HTMLDivElement[]} */
-    const divs = (Array.from(document.getElementsByClassName('input-entry')));
     const CITATION_MODE = FORM_INPUT.el_CitationMode.value;
-    for (const div of divs) {
-      /** @type {HTMLInputElement} */
-      const input = (div.children[1]);
-      if (PROFILES[CITATION_MODE].includes(input.name))
-        div.classList.remove('disabled');
-      else
-        div.classList.add('disabled');
-    }
+    /** @type {string[]} */
+    const REQUIRED_FIELDS = PROFILES[CITATION_MODE];
+
+    // Filter based on whether the fields are required
+    for (const inputEntry of el_inputEntries)
+      inputEntry.updateDisplay(REQUIRED_FIELDS.includes(inputEntry.id));
   }
   filterInputs();
   FORM_INPUT.el_CitationMode.addEventListener('change', filterInputs);
@@ -31,7 +30,8 @@ document.addEventListener('DOMContentLoaded', () => {
     `${YEAR}-${MONTH}-${DAY}`;
 
   // Send arbitrary data
-  function submitLister() {
+  function submitListener() {
+    console.log('DISPATCHED');
     /** @type {import('../../electron/core/Citation')} */
     const citation = window['sendData']({
       firstName: FORM_INPUT.el_FirstName.value,
@@ -45,12 +45,12 @@ document.addEventListener('DOMContentLoaded', () => {
     });
     FORM_CONTROLS.el_PreviewTarget.children[0].innerHTML = citation[FORM_INPUT.el_CitationStyle.value];
     FORM_CONTROLS.el_PreviewTarget.style.display = 'block';
+    console.log('SUBMIT');
   }
-  FORM_CONTROLS.el_Butt.addEventListener('click', submitLister);
-
-  // Prevent default behavior of form submission
-  FORM_INPUT.el_MainForm.addEventListener('submit', event => {
-    event.preventDefault();
-    submitLister();
-  });
+  FORM_CONTROLS.el_Butt.addEventListener('click', submitListener);
+  FORM_INPUT.el_MainForm.addEventListener('submit', event => event.preventDefault());
+  
+  // Listen for forwarded `submit` events
+  for (const inputEntry of el_inputEntries)
+    inputEntry.addEventListener('submit', submitListener);
 });
