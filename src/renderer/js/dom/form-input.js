@@ -1,41 +1,43 @@
+/** @typedef {import('../components/InputField').InputField} InputField */
+
 // Export necessary variables for each input element
 /** @type {HTMLFormElement} */
 export const el_MainForm = (document.getElementById('main-form'));
-/** @type {HTMLSelectElement} */
+/** @type {InputField} */
 export const el_CitationStyle = (document.getElementById('citation-style'));
-/** @type {HTMLSelectElement} */
+/** @type {InputField} */
 export const el_CitationMode = (document.getElementById('citation-mode'));
-/** @type {HTMLInputElement} */
+/** @type {InputField} */
 export const el_FirstName = (document.getElementById('firstName'));
-/** @type {HTMLInputElement} */
+/** @type {InputField} */
 export const el_MiddleName = (document.getElementById('middleName'));
-/** @type {HTMLInputElement} */
+/** @type {InputField} */
 export const el_LastName = (document.getElementById('lastName'));
-/** @type {HTMLInputElement} */
+/** @type {InputField} */
 export const el_Title = (document.getElementById('title'));
-/** @type {HTMLInputElement} */
+/** @type {InputField} */
 export const el_PublishDate = (document.getElementById('publishDate'));
-/** @type {HTMLInputElement} */
+/** @type {InputField} */
 export const el_AccessDate = (document.getElementById('accessDate'));
-/** @type {HTMLInputElement} */
+/** @type {InputField} */
 export const el_Url = (document.getElementById('url'));
-/** @type {HTMLInputElement} */
+/** @type {InputField} */
 export const el_Doi = (document.getElementById('doi'));
-/** @type {HTMLInputElement} */
+/** @type {InputField} */
 export const el_PublicationTitle = (document.getElementById('publicationTitle'));
-/** @type {HTMLInputElement} */
+/** @type {InputField} */
 export const el_Volume = (document.getElementById('volume'));
-/** @type {HTMLInputElement} */
+/** @type {InputField} */
 export const el_Issue = (document.getElementById('issue'));
-/** @type {HTMLInputElement} */
+/** @type {InputField} */
 export const el_StartPage = (document.getElementById('startPage'));
-/** @type {HTMLInputElement} */
+/** @type {InputField} */
 export const el_EndPage = (document.getElementById('endPage'));
-/** @type {HTMLInputElement} */
+/** @type {InputField} */
 export const el_PublisherName = (document.getElementById('publisherName'));
-/** @type {HTMLInputElement} */
+/** @type {InputField} */
 export const el_Country = (document.getElementById('country'));
-/** @type {HTMLInputElement} */
+/** @type {InputField} */
 export const el_PublisherStateProvince = (document.getElementById('publisherStateProvince'));
-/** @type {HTMLInputElement} */
+/** @type {InputField} */
 export const el_City = (document.getElementById('publisherCity'));

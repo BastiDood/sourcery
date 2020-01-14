@@ -74,9 +74,24 @@ export class InputField extends HTMLElement {
   _enableDisplay() { this.style.display = 'block'; }
   _disableDisplay() { this.style.display = 'none'; }
 
-  /** Forward the value from the stored `<input>` tag */
-  get value() { return this._el_Input.value; }
   get id() { return this._id; }
+
+  get value() { return this._el_Input.value; }
+  set value(newValue) { this._el_Input.value = newValue; }
+
+  get min() { return this._el_Input.min; }
+  set min(newMin) {
+    if (newMin >= this._el_Input.max)
+      throw new Error('The minimum input cannot be greater than or equal to the maximum.');
+    this._el_Input.min = newMin;
+  }
+
+  get max() { return this._el_Input.max; }
+  set max(newMax) {
+    if (newMax <= this._el_Input.min)
+      throw new Error('The maximum input cannot be less than or equal to the minimum.');
+    this._el_Input.max = newMax;
+  }
 }
 
 customElements.define('input-field', InputField);
