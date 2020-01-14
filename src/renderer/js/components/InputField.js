@@ -35,16 +35,16 @@ export class InputField extends HTMLElement {
     `;
     this._enableDisplay();
 
+    // Establish hierarchy
+    this._shadowRoot.append(el_Style);
+    this._shadowRoot.append(el_Label);
+    this._shadowRoot.append(el_Input);
+
     // Simulate and forward events from `<input>` tag
     el_Input.addEventListener('keydown', event => {
       if (event.key !== 'Enter') return;
       this.dispatchEvent(new Event('submit', { bubbles: true }));
     });
-
-    // Establish hierarchy
-    this._shadowRoot.append(el_Style);
-    this._shadowRoot.append(el_Label);
-    this._shadowRoot.append(el_Input);
   }
 
   /**
