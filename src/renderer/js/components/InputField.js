@@ -1,6 +1,5 @@
 export class InputField extends HTMLElement {
   constructor() {
-    // Custom Element Setup
     super();
     this._shadowRoot = this.attachShadow({ mode: 'open' });
   }
