@@ -45,7 +45,6 @@ document.addEventListener('DOMContentLoaded', () => {
     });
     FORM_CONTROLS.el_PreviewTarget.children[0].innerHTML = citation[FORM_INPUT.el_CitationStyle.value];
     FORM_CONTROLS.el_PreviewTarget.style.display = 'block';
-    console.log('SUBMIT');
   }
   FORM_CONTROLS.el_Butt.addEventListener('click', submitListener);
   FORM_INPUT.el_MainForm.addEventListener('submit', event => event.preventDefault());
