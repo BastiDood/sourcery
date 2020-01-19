@@ -20,6 +20,7 @@ document.addEventListener('DOMContentLoaded', () => {
   FORM_INPUT.el_CitationMode.addEventListener('change', filterInputs);
 
   // Set default date to today for access date
+  // TODO: Encapsulate this functionality inside `InputField`
   const TODAY = new Date();
   const YEAR = TODAY.getFullYear();
   const MONTH = (TODAY.getMonth() + 1).toString().padStart(2, '0');
@@ -31,7 +32,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // Send arbitrary data
   function submitListener() {
-    console.log('DISPATCHED');
     /** @type {import('../../electron/core/Citation')} */
     const citation = window['sendData']({
       firstName: FORM_INPUT.el_FirstName.value,
