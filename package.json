@@ -11,8 +11,8 @@
   "author": "Basti Ortiz <ortizbasti16@gmail.com>",
   "license": "GPL-3.0-or-later",
   "devDependencies": {
-    "@types/jest": "^24.9.0",
-    "electron": "^7.1.9",
+    "@types/jest": "^24.9.1",
+    "electron": "^7.1.10",
     "electron-builder": "^21.2.0",
     "jest": "^24.9.0"
   },
