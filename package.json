@@ -18,7 +18,8 @@
   },
   "build": {
     "appId": "ortiz.basti.sourcery",
-    "productName": "sourcery",
+    "directories": { "buildResources": "res" },
+    "productName": "Sourcery",
     "copyright": "Copyright © 2020 Basti Ortiz"
   }
 }
