@@ -4,7 +4,7 @@
 const path = require('path');
 
 // DEPENDENCIES
-const Electron = require('electron');
+const { app, BrowserWindow, Menu } = require('electron');
 
 class Main {
   /**
@@ -20,7 +20,7 @@ class Main {
      * Electron app instance.
      * @private
      */
-    this._app = Electron.app;
+    this._app = app;
     /**
      * Absolute path to the preload script.
      * @private
@@ -47,10 +47,10 @@ class Main {
   }
 
   _createWindow() {
-    const { BrowserWindow } = Electron;
     const win = new BrowserWindow({
       backgroundColor: '#22222f',
       darkTheme: true,
+      icon: path.resolve(__dirname, '../../res/icon.ico'),
       show: false,
       webPreferences: {
         // TODO: Turn on `contextIsolation` in the future.
@@ -68,10 +68,7 @@ class Main {
     return win;
   }
 
-  _initMenu() {
-    const { Menu } = Electron;
-    Menu.setApplicationMenu(null);
-  }
+  _initMenu() { Menu.setApplicationMenu(null); }
 }
 
 module.exports = Main;
